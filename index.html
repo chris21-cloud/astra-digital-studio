@@ -33,6 +33,11 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 18px;border-radius:12px;text-decoration:none;font-weight:850;font-size:14px;transition:transform .2s,border-color .2s}
     .btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(100deg,var(--cyan),#c5b5ff);color:#07111e;box-shadow:0 10px 35px #77e4ff1b}.secondary{border:1px solid #455474;background:#ffffff06}
     .tiny-note{font-size:12px;color:#91a1c1;margin:16px 0 0}
+    .hero-stats{display:flex;gap:0;flex-wrap:wrap;margin-top:30px;border:1px solid #ffffff17;border-radius:15px;background:linear-gradient(100deg,#ffffff07,#76e5ff08);max-width:490px;overflow:hidden}
+    .hero-stats div{display:flex;flex-direction:column;gap:1px;padding:13px 18px;flex:1;min-width:110px}
+    .hero-stats div+div{border-left:1px solid #ffffff17}
+    .hero-stats strong{font-size:21px;line-height:1.2;letter-spacing:-.5px;color:var(--cyan)}
+    .hero-stats span{font-size:10px;color:var(--muted);white-space:nowrap}
     .showcase{position:relative;padding:14px;border:1px solid #65749b55;border-radius:24px;background:linear-gradient(145deg,#172642,#12152c);box-shadow:0 28px 90px #0005;transform:rotate(1deg)}
     .showcase:before{content:"";position:absolute;inset:-18px 28px 24px -18px;border:1px solid #8f9cff25;border-radius:26px;z-index:-1}
     .browser{border:1px solid #394765;border-radius:16px;overflow:hidden;background:#0a1020}
@@ -101,7 +106,7 @@
     .cta{border:1px solid #53618a;border-radius:24px;padding:clamp(25px,5vw,48px);background:radial-gradient(ellipse at 100% 0%,#6b55a633,transparent 45%),linear-gradient(120deg,#13233a,#17152f);display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-1px;margin:9px 0 10px}.cta p{margin:0;color:var(--muted);max-width:560px}
     footer{padding:25px 0;border-top:1px solid #ffffff12;color:#8e9dbc;font-size:12px}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.footer-brand{font-weight:900;letter-spacing:1.4px;color:#dfe7f8}
     @media(max-width:800px){.trust-strip{grid-template-columns:1fr}.package-grid{grid-template-columns:1fr}.faq-list{grid-template-columns:1fr}.hero{grid-template-columns:1fr;gap:42px;padding:62px 0 48px;min-height:0}.hero-copy{max-width:700px}.showcase{max-width:560px;width:100%;margin:auto}.service-grid{grid-template-columns:1fr 1fr}.portfolio{grid-template-columns:1fr}.portfolio-art{min-height:220px}.cta{align-items:flex-start;flex-direction:column}}
-    @media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 30px))}.nav{align-items:flex-start}.navlinks{width:100%;overflow-x:auto;padding:3px 0 5px;white-space:nowrap}.website-search{gap:5px}.website-search button{padding:10px 12px}.website-search input{padding-inline:7px}.trust-item{padding:12px}.nav{min-height:68px;flex-wrap:wrap;padding:12px 0}.navlinks{gap:13px}.navlinks a{font-size:12px}.navlinks .navcta{padding:7px 10px}.brand{font-size:17px}.brandmark{width:36px;height:36px;flex-basis:36px}.brandmark svg{width:28px;height:28px}h1{letter-spacing:-2px;font-size:clamp(42px,12vw,60px)}.lead{font-size:16px}.service-grid,.process-grid{grid-template-columns:1fr}.card{padding:21px}.preview{padding:22px 17px}.preview-tile{height:62px}.float-tag{right:-5px;bottom:16px}.hero{padding-top:48px}section{padding:52px 0}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.hero-stats div{padding:11px 12px;min-width:0}.hero-stats span{font-size:9px}.hero-stats strong{font-size:19px}.wrap{width:min(var(--max),calc(100% - 30px))}.nav{align-items:flex-start}.navlinks{width:100%;overflow-x:auto;padding:3px 0 5px;white-space:nowrap}.website-search{gap:5px}.website-search button{padding:10px 12px}.website-search input{padding-inline:7px}.trust-item{padding:12px}.nav{min-height:68px;flex-wrap:wrap;padding:12px 0}.navlinks{gap:13px}.navlinks a{font-size:12px}.navlinks .navcta{padding:7px 10px}.brand{font-size:17px}.brandmark{width:36px;height:36px;flex-basis:36px}.brandmark svg{width:28px;height:28px}h1{letter-spacing:-2px;font-size:clamp(42px,12vw,60px)}.lead{font-size:16px}.service-grid,.process-grid{grid-template-columns:1fr}.card{padding:21px}.preview{padding:22px 17px}.preview-tile{height:62px}.float-tag{right:-5px;bottom:16px}.hero{padding-top:48px}section{padding:52px 0}.footer-inner{align-items:flex-start;flex-direction:column}}
 
     /* Extra polish: gentle depth and hover feedback on desktop */
     .card,.portfolio,.showcase{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
@@ -146,6 +151,11 @@
           <a class="btn secondary" href="#work">Explore sample work ↓</a>
         </div>
         <p class="tiny-note">A growing independent studio. Every project starts with a clear conversation about your needs and budget.</p>
+        <div class="hero-stats" aria-label="ASTRA Digital Studio highlights">
+          <div><strong>05</strong><span>Website concepts</span></div>
+          <div><strong>03</strong><span>Creative services</span></div>
+          <div><strong>ET</strong><span>Based in Ethiopia</span></div>
+        </div>
       </div>
       <div class="showcase" aria-label="Illustration of a modern website preview">
         <div class="browser">
