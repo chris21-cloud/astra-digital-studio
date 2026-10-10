@@ -102,7 +102,13 @@
     footer{padding:25px 0;border-top:1px solid #ffffff12;color:#8e9dbc;font-size:12px}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.footer-brand{font-weight:900;letter-spacing:1.4px;color:#dfe7f8}
     @media(max-width:800px){.trust-strip{grid-template-columns:1fr}.package-grid{grid-template-columns:1fr}.faq-list{grid-template-columns:1fr}.hero{grid-template-columns:1fr;gap:42px;padding:62px 0 48px;min-height:0}.hero-copy{max-width:700px}.showcase{max-width:560px;width:100%;margin:auto}.service-grid{grid-template-columns:1fr 1fr}.portfolio{grid-template-columns:1fr}.portfolio-art{min-height:220px}.cta{align-items:flex-start;flex-direction:column}}
     @media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 30px))}.nav{align-items:flex-start}.navlinks{width:100%;overflow-x:auto;padding:3px 0 5px;white-space:nowrap}.website-search{gap:5px}.website-search button{padding:10px 12px}.website-search input{padding-inline:7px}.trust-item{padding:12px}.nav{min-height:68px;flex-wrap:wrap;padding:12px 0}.navlinks{gap:13px}.navlinks a{font-size:12px}.navlinks .navcta{padding:7px 10px}.brand{font-size:17px}.brandmark{width:36px;height:36px;flex-basis:36px}.brandmark svg{width:28px;height:28px}h1{letter-spacing:-2px;font-size:clamp(42px,12vw,60px)}.lead{font-size:16px}.service-grid,.process-grid{grid-template-columns:1fr}.card{padding:21px}.preview{padding:22px 17px}.preview-tile{height:62px}.float-tag{right:-5px;bottom:16px}.hero{padding-top:48px}section{padding:52px 0}.footer-inner{align-items:flex-start;flex-direction:column}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+    .reveal-ready .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+    .reveal-ready .reveal.is-visible{opacity:1;transform:translateY(0)}
+    .back-to-top{position:fixed;right:20px;bottom:20px;z-index:20;width:46px;height:46px;border:1px solid #76e5ff66;border-radius:14px;background:#111b30;color:var(--cyan);font-size:21px;font-weight:900;box-shadow:0 10px 32px #0005;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s}
+    .back-to-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.reveal-ready .reveal{opacity:1;transform:none}}
+
   </style>
 </head>
 <body>
@@ -315,8 +321,34 @@
     </section>
   </main>
   <footer><div class="wrap footer-inner"><div class="footer-brand"><svg viewBox="0 0 40 40" aria-hidden="true" style="width:22px;height:22px;vertical-align:middle;margin-right:7px;fill:none;stroke:#76e5ff;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round"><path d="M4 31 15.2 14.5 21 22.3 25.2 16.8 36 31H4Z"/><path d="M10 31 17.4 20.1 21 25"/><path d="M29.3 4.8 30.8 8.3 34.3 9.7 30.8 11.2 29.3 14.7 27.9 11.2 24.4 9.7 27.9 8.3Z"/></svg>ASTRA DIGITAL STUDIO</div><div>Built with care in Ethiopia · © <span id="year">2026</span> ASTRA</div></div></footer>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      document.documentElement.classList.add('reveal-ready');
+      const revealTargets = document.querySelectorAll('.hero-copy, .showcase, .trust-item, .section-head, .service-grid .card, .portfolio, .package, .step, .faq-list details, .cta');
+      revealTargets.forEach((element, index) => {
+        element.classList.add('reveal');
+        if (element.classList.contains('portfolio')) element.style.transitionDelay = ((index % 3) * 70) + 'ms';
+      });
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.12});
+      revealTargets.forEach(element => revealObserver.observe(element));
+    }
+
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 550);
+    }, {passive: true});
+    backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: reduceMotion ? 'auto' : 'smooth'}));
     const searchForm = document.getElementById('website-search');
     const searchInput = document.getElementById('website-search-input');
     const searchStatus = document.getElementById('search-status');
