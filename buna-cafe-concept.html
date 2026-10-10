@@ -3,6 +3,26 @@
 <style>
 :root{--cream:#f7efe3;--ink:#2e1e17;--rust:#a6432b;--gold:#d3a14e;--green:#4d6044;--muted:#76665c;--line:#d8c8b4}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.7 system-ui,-apple-system,'Segoe UI',sans-serif}a{color:inherit}.wrap{width:min(1120px,calc(100% - 38px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:19px 0;border-bottom:2px solid var(--ink)}.brand{font-weight:1000;letter-spacing:2px;text-decoration:none;font-size:16px}.brand span{color:var(--rust)}.nav a:last-child{font-size:12px;font-weight:800;text-decoration:none}.hero{padding:56px 0 64px;display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}.hero-copy{padding:10px 0}.kicker{display:inline-block;background:var(--gold);color:var(--ink);padding:5px 10px;font-size:10px;font-weight:950;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(44px,6.5vw,78px);line-height:.99;letter-spacing:-3px;margin:18px 0}.hero h1 em{font-family:Georgia,serif;font-weight:500;color:var(--rust)}.hero p{max-width:460px;color:var(--muted);font-size:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-block;background:var(--rust);color:#fff7eb;padding:13px 17px;text-decoration:none;font-size:12px;font-weight:900}.btn.alt{background:transparent;border:1px solid var(--ink);color:var(--ink)}.hero-poster{min-height:480px;position:relative;overflow:hidden;background:linear-gradient(0deg,#1e1009d9,transparent 68%),url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1100&q=85') center/cover;border:8px solid var(--rust);outline:1px solid var(--rust);outline-offset:5px}.poster-top{position:absolute;top:22px;left:20px;right:20px;display:flex;justify-content:space-between;color:#fff0d7;font-size:10px;font-weight:900;letter-spacing:2px}.poster-bottom{position:absolute;bottom:26px;left:24px;right:24px;color:#fff5e8}.poster-bottom .amharic{font-size:12px;letter-spacing:4px;color:#eac477;font-weight:900}.poster-bottom h2{font:500 clamp(38px,5vw,58px)/.95 Georgia,serif;margin:8px 0}.poster-bottom p{font-size:12px;margin:0}.band{background:var(--green);color:#f9f0df;padding:13px;text-align:center;font-size:10px;letter-spacing:3px;font-weight:900}.story{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;padding:70px 0}.section-tag{font-size:10px;font-weight:950;letter-spacing:2px;text-transform:uppercase;color:var(--rust)}.story h2,.menu-head h2{font:500 clamp(34px,4.5vw,54px)/1.05 Georgia,serif;margin:12px 0}.story p{color:var(--muted);max-width:670px}.menu-section{background:#eee0cd;padding:60px 0}.menu-head{display:flex;justify-content:space-between;align-items:end;gap:24px}.menu-head p{max-width:400px;color:var(--muted);font-size:14px}.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:0 32px;margin-top:20px}.menu-item{display:flex;gap:15px;padding:20px 0;border-bottom:1px solid #cbb69b}.menu-icon{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;background:var(--cream);border-radius:50%;font-size:22px}.menu-item h3{font-size:16px;margin:0 0 3px}.menu-item p{font-size:12px;color:var(--muted);margin:0}.visit{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;padding:65px 0}.visit-card{background:var(--rust);color:#fff5e8;padding:clamp(25px,4vw,40px)}.visit-card h2{font:500 clamp(30px,4vw,45px)/1.1 Georgia,serif;margin:8px 0}.visit-card p{color:#f3d8c7}.visit-card a{color:white;font-weight:900}.notice{border-top:1px solid var(--line);padding:18px 0 42px;color:var(--muted);font-size:12px}footer{background:var(--ink);color:#e9dccc;padding:24px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.foot a{color:#eac477;font-weight:850}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding:38px 0 48px}.hero-poster{min-height:380px}.story{grid-template-columns:1fr;gap:12px;padding:48px 0}.menu-head{display:block}.menu{grid-template-columns:1fr}.visit{grid-template-columns:1fr;padding:45px 0}.hero h1{letter-spacing:-2px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ASTRA experience upgrade */
+:focus-visible{outline:3px solid #a6432b;outline-offset:4px}
+html{scroll-padding-top:90px}
+::selection{background:#a6432b;color:#fff}
+a,button{transition:transform .22s ease,box-shadow .22s ease,opacity .22s ease}
+a:hover{opacity:.9}
+.hero,.hero-copy,.hero-art,.hero-poster,.visit,.contact,.ask{isolation:isolate}
+.item,.menu-item,.feature,.photo-card,.menu-row{transition:transform .22s ease,box-shadow .22s ease}.item:hover,.menu-item:hover,.feature:hover,.photo-card:hover{transform:translateY(-4px)}
+.ast-search{display:flex;gap:10px;align-items:center;max-width:650px;margin:20px 0 24px;padding:8px;border:1px solid #d8c8b4;border-radius:14px;background:#fff9f0;box-shadow:0 10px 30px #00000008}
+.ast-search input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:inherit;font:inherit;padding:9px 10px}
+.ast-search input::placeholder{opacity:.65}
+.ast-search span{font-size:11px;font-weight:800;opacity:.65;padding:0 9px;white-space:nowrap}
+.ast-search [hidden]{display:none!important}
+.ast-top{position:fixed;right:18px;bottom:18px;z-index:40;width:44px;height:44px;border:0;border-radius:50%;background:#a6432b;color:#fff;box-shadow:0 8px 24px #0002;cursor:pointer;font-size:20px;opacity:0;pointer-events:none;transform:translateY(8px)}
+.ast-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.ast-reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.ast-reveal.in-view{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.ast-search{gap:4px}.ast-search span{display:none}.ast-top{right:12px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){.ast-reveal{opacity:1;transform:none;transition:none}*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 </style></head><body>
 <header class="wrap"><nav class="nav"><a class="brand" href="index.html">ASTRA<span> / </span>CONCEPT</a><a href="index.html">← Back to studio</a></nav></header>
 <main><section class="wrap hero"><div class="hero-copy"><div class="kicker">Coffee · Culture · Community</div><h1>More than coffee.<br><em>A buna moment.</em></h1><p>A vibrant café concept inspired by the warmth of Ethiopian coffee culture—with room for the story, menu, and small rituals that bring people together.</p><div class="actions"><a class="btn" href="https://wa.me/251927770121" target="_blank" rel="noopener noreferrer">DISCUSS THIS DESIGN ↗</a><a class="btn alt" href="#menu">See the menu layout</a></div></div><div class="hero-poster" role="img" aria-label="Sample coffee photograph styled as a Buna Cafe poster"><div class="poster-top"><span>COFFEE & COMMUNITY</span><span>EST. CONCEPT</span></div><div class="poster-bottom"><div class="amharic">ቡና · BUNA</div><h2>Gather.<br>Pour. Connect.</h2><p>A sample visual direction for Buna Cafe</p></div></div></section>
@@ -11,4 +31,35 @@
 <section class="menu-section" id="menu"><div class="wrap"><div class="menu-head"><div><div class="section-tag">Menu preview</div><h2>Something for every pause.</h2></div><p>These are placeholder menu categories, not a claim about the café's actual offerings. Final items and prices need approval.</p></div><div class="menu"><article class="menu-item"><div class="menu-icon">☕</div><div><h3>Buna / Ethiopian Coffee</h3><p>Feature the café's confirmed coffee service and varieties.</p></div></article><article class="menu-item"><div class="menu-icon">🫖</div><div><h3>Tea & warm drinks</h3><p>Add the actual hot drinks offered by the café.</p></div></article><article class="menu-item"><div class="menu-icon">🥐</div><div><h3>Fresh bites</h3><p>A space for verified pastries, snacks, or light meals.</p></div></article><article class="menu-item"><div class="menu-icon">🍰</div><div><h3>Something sweet</h3><p>Highlight popular treats and confirmed prices.</p></div></article></div></div></section>
 <section class="wrap visit"><div><div class="section-tag">Plan your visit</div><h2 style="font:500 clamp(35px,5vw,56px)/1.05 Georgia,serif">Good coffee is better shared.</h2><p style="color:var(--muted)">A dedicated section can show verified opening hours, location, and directions, so customers know exactly where to go.</p></div><div class="visit-card"><div class="section-tag" style="color:#f0c879">Interested in the design?</div><h2>Let's make it yours.</h2><p>Contact ASTRA to discuss customizing this concept.</p><a href="https://wa.me/251927770121" target="_blank" rel="noopener noreferrer">WHATSAPP ASTRA ↗</a></div></section>
 <div class="wrap notice"><strong>Independent concept:</strong> ASTRA has not been hired, approved, or endorsed by Buna Cafe. The menu, photos, location, hours, and contact details must be confirmed by the owner before official use.</div></main>
-<footer><div class="wrap foot"><span>Concept by ASTRA Digital Studio · Ethiopia</span><span><a href="index.html#work">More concepts</a> · <a href="index.html">Studio homepage</a></span></div></footer></body></html>
+<footer><div class="wrap foot"><span>Concept by ASTRA Digital Studio · Ethiopia</span><span><a href="index.html#work">More concepts</a> · <a href="index.html">Studio homepage</a></span></div></footer>
+<script>
+(() => {
+ const searchTargets = [{selector:'#menu .menu-item', title:'Find something to enjoy', placeholder:'Search coffee, tea, fresh bites…'}];
+ searchTargets.forEach((config,index) => {
+   const cards = Array.from(document.querySelectorAll(config.selector));
+   if(!cards.length) return;
+   const section = cards[0].closest('section') || cards[0].parentElement;
+   const form = document.createElement('form');
+   form.className='ast-search';
+   form.setAttribute('role','search');
+   form.innerHTML='<input type="search" aria-label="'+config.title+'" placeholder="'+config.placeholder+'" autocomplete="off"><span aria-live="polite"></span>';
+   const input=form.querySelector('input'), status=form.querySelector('span');
+   const parent=cards[0].parentElement;
+   parent.parentNode.insertBefore(form,parent);
+   const update=()=>{let count=0; const q=input.value.trim().toLowerCase();cards.forEach(card=>{const match=!q||card.textContent.toLowerCase().includes(q);card.hidden=!match;if(match)count++;});status.textContent=q?count+' match'+(count===1?'':'es'):cards.length+' items';};
+   form.addEventListener('submit',event=>event.preventDefault());
+   input.addEventListener('input',update);
+   update();
+ });
+ const revealSelector='section, .feature, .category, .product, .menu-item, .photo-card, .item, .visit-card';
+ document.querySelectorAll(revealSelector).forEach((el,i)=>{if(el.closest('header,nav,footer'))return;el.classList.add('ast-reveal');el.style.transitionDelay=Math.min(i%5,4)*55+'ms';});
+ if('IntersectionObserver' in window){
+   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target);}}),{threshold:.08});
+   document.querySelectorAll('.ast-reveal').forEach(el=>observer.observe(el));
+ } else {document.querySelectorAll('.ast-reveal').forEach(el=>el.classList.add('in-view'));}
+ const top=document.createElement('button');top.className='ast-top';top.type='button';top.setAttribute('aria-label','Back to top');top.title='Back to top';top.textContent='↑';document.body.appendChild(top);
+ top.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+ const onScroll=()=>top.classList.toggle('visible',window.scrollY>500);
+ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script></body></html>
