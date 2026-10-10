@@ -69,6 +69,12 @@
     .website-search button{border:0;border-radius:10px;padding:11px 17px;background:linear-gradient(100deg,var(--cyan),var(--violet));color:#07111e;font:inherit;font-size:13px;font-weight:900;cursor:pointer}
     .search-status{font-size:12px;color:#91a1c1;margin:8px 0 24px}
     .portfolio[hidden]{display:none!important}
+    .concept-filters{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 5px}
+    .concept-filter{display:inline-flex;align-items:center;gap:10px;border:1px solid #354563;background:#0d1527;color:#c7d4eb;border-radius:999px;padding:9px 13px;font:inherit;font-size:12px;font-weight:800;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+    .concept-filter:hover{transform:translateY(-2px);border-color:#76e5ff88}
+    .concept-filter.active{background:linear-gradient(100deg,#76e5ff,#b7a0ff);border-color:transparent;color:#07111e}
+    .concept-filter span{font-size:10px;opacity:.75}
+    .concept-filter:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
     .trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:18px 0 30px}
     .trust-item{display:flex;align-items:center;gap:11px;padding:15px 17px;border:1px solid #ffffff12;border-radius:14px;background:#ffffff04}
     .trust-icon{font-size:20px}.trust-item strong{display:block;font-size:13px}.trust-item span:last-child{display:block;color:var(--muted);font-size:11px}
@@ -165,6 +171,11 @@
         <input id="website-search-input" type="search" placeholder="Search websites (e.g. coffee, electronics)..." aria-label="Search website concepts" autocomplete="off">
         <button type="submit">Search ↗</button>
       </form>
+      <div class="concept-filters" role="group" aria-label="Filter website concepts">
+        <button type="button" class="concept-filter active" data-filter="all" aria-pressed="true">All concepts <span>05</span></button>
+        <button type="button" class="concept-filter" data-filter="cafe" aria-pressed="false">Café concepts <span>04</span></button>
+        <button type="button" class="concept-filter" data-filter="electronics" aria-pressed="false">Electronics <span>01</span></button>
+      </div>
       <p class="search-status" id="search-status" aria-live="polite">Showing all 5 website concepts.</p>
       <article class="portfolio">
         <div class="portfolio-art" aria-label="Illustrated concept artwork for The Cozy Cup café">
@@ -310,18 +321,35 @@
     const searchInput = document.getElementById('website-search-input');
     const searchStatus = document.getElementById('search-status');
     const websiteCards = Array.from(document.querySelectorAll('#work .portfolio'));
+    const conceptFilters = Array.from(document.querySelectorAll('.concept-filter'));
+    let activeConceptFilter = 'all';
     function filterWebsites() {
       const query = searchInput.value.trim().toLowerCase();
       let shown = 0;
       websiteCards.forEach(card => {
-        const match = !query || card.textContent.toLowerCase().includes(query);
+        const text = card.textContent.toLowerCase();
+        const categoryMatch = activeConceptFilter === 'all'
+          || (activeConceptFilter === 'electronics' && text.includes('electronics'))
+          || (activeConceptFilter === 'cafe' && !text.includes('electronics'));
+        const match = categoryMatch && (!query || text.includes(query));
         card.hidden = !match;
         if (match) shown++;
       });
       searchStatus.textContent = shown
-        ? 'Showing ' + shown + ' of ' + websiteCards.length + ' website concepts' + (query ? ' for "' + query + '".' : '.')
-        : 'No website concepts found for "' + query + '". Try "coffee", "cafe", or "electronics".';
+        ? 'Showing ' + shown + ' of ' + websiteCards.length + ' website concepts' + (activeConceptFilter !== 'all' ? ' in this category' : '') + (query ? ' for "' + query + '".' : '.')
+        : 'No matching concepts found. Try another category or search term.';
     }
+    conceptFilters.forEach(button => {
+      button.addEventListener('click', () => {
+        activeConceptFilter = button.dataset.filter;
+        conceptFilters.forEach(item => {
+          const selected = item === button;
+          item.classList.toggle('active', selected);
+          item.setAttribute('aria-pressed', String(selected));
+        });
+        filterWebsites();
+      });
+    });
     searchForm.addEventListener('submit', event => {
       event.preventDefault();
       filterWebsites();
