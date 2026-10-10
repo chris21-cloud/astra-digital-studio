@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17120f">
+  <title>Snice Café Website Concept | ASTRA Digital Studio</title>
+  <meta name="description" content="An unofficial website design concept for Snice Café in Addis Ababa, created by ASTRA Digital Studio.">
+  <style>
+    :root{color-scheme:dark;--bg:#17120f;--panel:#211a15;--cream:#fff4e5;--muted:#c4b3a1;--gold:#e8bd76;--line:#49372b;--max:1100px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:inherit}a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.wrap{width:min(var(--max),calc(100% - 38px));margin:auto}
+    .notice{padding:10px 16px;text-align:center;background:#3a2a1c;border-bottom:1px solid #735433;color:#ffe5ba;font-size:12px;font-weight:750;letter-spacing:.3px}
+    header{border-bottom:1px solid #ffffff12;background:#17120feF;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}.mark{width:42px;height:42px;border:1px solid #e8bd7655;border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:21px}.brand strong{display:block;font-family:Georgia,serif;font-size:21px;letter-spacing:.2px;line-height:1.2}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+    .links{display:flex;align-items:center;gap:23px}.links a{text-decoration:none;color:var(--muted);font-size:13px}.links a:hover{color:var(--gold)}.links .book{border:1px solid #e8bd7666;padding:9px 13px;border-radius:99px;color:var(--gold)}
+    .hero{padding:85px 0 78px;display:grid;grid-template-columns:1fr .88fr;align-items:center;gap:55px}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:800;text-transform:uppercase}
+    h1,h2,h3,p{margin-top:0}h1{font:clamp(46px,6.5vw,78px)/1.03 Georgia,serif;letter-spacing:-2.5px;margin:17px 0 22px}h1 em{color:var(--gold);font-weight:400}.intro{max-width:530px;color:var(--muted);font-size:17px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.btn{display:inline-block;text-decoration:none;padding:12px 17px;border-radius:6px;font-weight:800;font-size:13px}.primary{background:var(--gold);color:#21160c}.outline{border:1px solid #72563b;color:var(--cream)}.smallnote{color:#a99886;font-size:11px;margin-top:18px}
+    .hero-art{min-height:400px;border:1px solid #654c35;border-radius:180px 180px 14px 14px;padding:24px;display:flex;align-items:flex-end;background:radial-gradient(ellipse at 50% 25%,#e8bd7638,transparent 45%),linear-gradient(155deg,#4b3223,#211711 65%);position:relative;overflow:hidden}
+    .sun{position:absolute;top:65px;right:22%;width:115px;height:115px;border-radius:50%;background:linear-gradient(135deg,#f6dba4,#b9783b);opacity:.85;box-shadow:0 0 70px #e8bd7626}
+    .mountain{position:absolute;inset:100px 0 0;width:100%;height:70%;opacity:.5}.cup{position:relative;z-index:1;width:100%;text-align:center;padding:24px 12px;background:#17120fe8;border:1px solid #e8bd763d;border-radius:10px}.cup .coffee{font-size:43px;line-height:1.4}.cup h2{font:30px/1.1 Georgia,serif;margin:8px 0}.cup p{color:var(--muted);font-size:12px;margin:0}
+    section{padding:68px 0}.heading{max-width:640px;margin-bottom:30px}.heading h2{font:clamp(32px,4.5vw,48px)/1.12 Georgia,serif;margin:10px 0}.heading p{color:var(--muted)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:24px}.feature .symbol{font-size:25px;color:var(--gold)}.feature h3{font:22px Georgia,serif;margin:12px 0 7px}.feature p{font-size:13px;color:var(--muted);margin:0}
+    .menu{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}.menu-panel{border:1px solid var(--line);border-radius:12px;padding:26px;background:linear-gradient(145deg,#211a15,#1a1410)}.menu-row{padding:15px 0;border-bottom:1px dashed #624a36}.menu-row:last-child{border:0;padding-bottom:0}.menu-row strong{display:block;font:20px Georgia,serif}.menu-row span{font-size:12px;color:var(--muted)}.menu-callout{padding:25px;border-left:2px solid var(--gold);color:var(--muted);font-size:14px}
+    .visit{display:grid;grid-template-columns:1fr 1fr;gap:25px;padding:clamp(24px,5vw,42px);border:1px solid #624a36;border-radius:15px;background:radial-gradient(ellipse at 100% 0%,#e8bd7619,transparent 45%),#211a15}.visit h2{font:clamp(30px,4vw,42px)/1.1 Georgia,serif;margin:10px 0}.visit p{color:var(--muted)}.visit address{font-style:normal;color:var(--muted);font-size:14px}.contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    footer{border-top:1px solid #ffffff12;padding:25px 0;color:#a99886;font-size:11px}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:35px;padding:55px 0}.hero-art{min-height:340px;max-width:500px;width:100%;margin:auto}.features{grid-template-columns:1fr}.menu,.visit{grid-template-columns:1fr}.links{gap:12px}.links a{font-size:12px}}
+    @media(max-width:480px){.wrap{width:calc(100% - 28px)}nav{align-items:flex-start;padding:13px 0;flex-direction:column;gap:12px}.links{width:100%;justify-content:space-between}.links a{font-size:11px}.links .book{padding:6px 9px}.brand strong{font-size:19px}h1{letter-spacing:-1.4px}.hero-art{min-height:300px}.sun{width:85px;height:85px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="notice">WEBSITE CONCEPT FOR PURCHASE · Independent proposal by ASTRA Digital Studio · Not commissioned or approved by Snice Café</div>
+  <header><nav class="wrap" aria-label="Main navigation">
+    <a class="brand" href="#top"><span class="mark" aria-hidden="true">✦</span><span><strong>Snice Café</strong><small>Concept design only</small></span></a>
+    <div class="links"><a href="#story">Our vibe</a><a href="#menu">Menu concept</a><a href="#visit">Find us</a><a class="book" href="#visit">Contact info</a></div>
+  </nav></header>
+  <main id="top">
+    <section class="wrap hero">
+      <div><div class="eyebrow">A little pause in your day</div><h1>Good coffee.<br><em>Gentler moments.</em></h1>
+        <p class="intro">A warm, welcoming café website concept inspired by Addis Ababa's everyday coffee culture. This design shows how Snice Café could introduce its atmosphere, menu, and location online.</p>
+        <div class="buttons"><a class="btn primary" href="#menu">Explore the concept ↓</a><a class="btn outline" href="#visit">Location details</a></div>
+        <p class="smallnote">This is an independent design concept offered for purchase. Products, prices, hours, and business details must be confirmed with the owner before any official launch.</p>
+      </div>
+      <div class="hero-art" aria-label="Decorative concept artwork with a golden sun and coffee cup">
+        <svg class="mountain" viewBox="0 0 500 330" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M0 280 120 95 210 210 300 120 500 285V330H0Z" fill="#b8804d"/><path d="M0 300 145 180 245 255 365 155 500 275V330H0Z" fill="#5e3b28"/><path d="M70 173 120 95 158 143 135 132 120 144 106 127Z" fill="#f3d9a7"/></svg>
+        <div class="sun"></div><div class="cup"><div class="coffee" aria-hidden="true">☕</div><h2>A moment to slow down.</h2><p>COFFEE · CONVERSATION · COMMUNITY</p></div>
+      </div>
+    </section>
+    <section class="wrap" id="story">
+      <div class="heading"><div class="eyebrow">The experience</div><h2>A cozy corner, made memorable.</h2><p>This section is a proposed design direction, not a factual claim about the café's current interior or services.</p></div>
+      <div class="features">
+        <article class="feature"><div class="symbol" aria-hidden="true">✧</div><h3>Warm atmosphere</h3><p>A rich coffee-inspired palette, elegant type, and spacious layout give the brand a friendly first impression.</p></article>
+        <article class="feature"><div class="symbol" aria-hidden="true">☕</div><h3>Coffee culture</h3><p>A place for the owner to showcase the actual coffee, drinks, snacks, and specialties once details are confirmed.</p></article>
+        <article class="feature"><div class="symbol" aria-hidden="true">⌖</div><h3>Easy to find</h3><p>A clear location section helps visitors find the café. Contact information should be checked before launch.</p></article>
+      </div>
+    </section>
+    <section class="wrap" id="menu">
+      <div class="heading"><div class="eyebrow">Menu preview</div><h2>A menu that puts the real offering first.</h2><p>No invented products or prices are presented as fact. These placeholders show how the final menu can be organized with the owner's approval.</p></div>
+      <div class="menu">
+        <div class="menu-panel">
+          <div class="menu-row"><strong>Signature coffee</strong><span>Replace with café-confirmed drink and description</span></div>
+          <div class="menu-row"><strong>Tea & other drinks</strong><span>Add available options after confirmation</span></div>
+          <div class="menu-row"><strong>Fresh bites</strong><span>Add verified pastries, snacks, or meals</span></div>
+          <div class="menu-row"><strong>House special</strong><span>Feature the café owner's chosen favorite</span></div>
+        </div>
+        <div class="menu-callout">Interested in purchasing or customizing this concept? Contact ASTRA Digital Studio to discuss the design. A purchase does not imply an existing relationship with Snice Café; the owner must approve business information and branding before official use.</div>
+      </div>
+    </section>
+    <section class="wrap" id="visit">
+      <div class="visit"><div><div class="eyebrow">Location concept</div><h2>Find your way to Snice Café.</h2><p>The following details appear in a public business directory and should be confirmed directly with the owner before this concept is published.</p><address>2PMW+2PX, Umma Semetar Street<br>Addis Ababa, Ethiopia</address><div class="contact-actions"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Snice+Cafe+Addis+Ababa" target="_blank" rel="noopener noreferrer">Open map ↗</a><a class="btn outline" href="https://www.africabizinfo.com/ET/snice-caf%C3%A9-091-151-9054" target="_blank" rel="noopener noreferrer">Source listing ↗</a></div></div>
+        <div><div class="eyebrow">Before launch</div><h2>Make it theirs.</h2><p>With permission, ASTRA can replace this draft content with the café's approved logo, real menu and prices, opening hours, photos, and preferred contact details.</p><p class="smallnote">This page is an independent design proposal. It does not imply a partnership, endorsement, or client relationship.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap foot"><span>Unofficial concept by ASTRA Digital Studio</span><span>Independent concept for purchase · Not affiliated with or endorsed by Snice Café</span></div></footer>
+</body>
+</html>
