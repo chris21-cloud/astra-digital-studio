@@ -23,10 +23,10 @@
     section{padding:68px 0}.heading{max-width:640px;margin-bottom:30px}.heading h2{font:clamp(32px,4.5vw,48px)/1.12 Georgia,serif;margin:10px 0}.heading p{color:var(--muted)}
     .features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:24px}.feature .symbol{font-size:25px;color:var(--gold)}.feature h3{font:22px Georgia,serif;margin:12px 0 7px}.feature p{font-size:13px;color:var(--muted);margin:0}
     .menu{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}.menu-panel{border:1px solid var(--line);border-radius:12px;padding:26px;background:linear-gradient(145deg,#211a15,#1a1410)}.menu-row{padding:15px 0;border-bottom:1px dashed #624a36}.menu-row:last-child{border:0;padding-bottom:0}.menu-row strong{display:block;font:20px Georgia,serif}.menu-row span{font-size:12px;color:var(--muted)}.menu-callout{padding:25px;border-left:2px solid var(--gold);color:var(--muted);font-size:14px}
-    .visit{display:grid;grid-template-columns:1fr 1fr;gap:25px;padding:clamp(24px,5vw,42px);border:1px solid #624a36;border-radius:15px;background:radial-gradient(ellipse at 100% 0%,#e8bd7619,transparent 45%),#211a15}.visit h2{font:clamp(30px,4vw,42px)/1.1 Georgia,serif;margin:10px 0}.visit p{color:var(--muted)}.visit address{font-style:normal;color:var(--muted);font-size:14px}.contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.photo-card{overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--panel)}.photo-card img{display:block;width:100%;height:230px;object-fit:cover;background:#302219}.photo-card div{padding:15px 17px}.photo-card h3{font:21px Georgia,serif;margin:0 0 4px}.photo-card p{color:var(--muted);font-size:12px;margin:0}.photo-note{color:var(--muted);font-size:12px;margin-top:15px}\n    .visit{display:grid;grid-template-columns:1fr 1fr;gap:25px;padding:clamp(24px,5vw,42px);border:1px solid #624a36;border-radius:15px;background:radial-gradient(ellipse at 100% 0%,#e8bd7619,transparent 45%),#211a15}.visit h2{font:clamp(30px,4vw,42px)/1.1 Georgia,serif;margin:10px 0}.visit p{color:var(--muted)}.visit address{font-style:normal;color:var(--muted);font-size:14px}.contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     footer{border-top:1px solid #ffffff12;padding:25px 0;color:#a99886;font-size:11px}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:35px;padding:55px 0}.hero-art{min-height:340px;max-width:500px;width:100%;margin:auto}.features{grid-template-columns:1fr}.menu,.visit{grid-template-columns:1fr}.links{gap:12px}.links a{font-size:12px}}
-    @media(max-width:480px){.wrap{width:calc(100% - 28px)}nav{align-items:flex-start;padding:13px 0;flex-direction:column;gap:12px}.links{width:100%;justify-content:space-between}.links a{font-size:11px}.links .book{padding:6px 9px}.brand strong{font-size:19px}h1{letter-spacing:-1.4px}.hero-art{min-height:300px}.sun{width:85px;height:85px}}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:35px;padding:55px 0}.hero-art{min-height:340px;max-width:500px;width:100%;margin:auto}.features{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.photo-card img{height:190px}.menu,.visit{grid-template-columns:1fr}.links{gap:12px}.links a{font-size:12px}}
+    @media(max-width:480px){.gallery{grid-template-columns:1fr}.photo-card img{height:230px}.wrap{width:calc(100% - 28px)}nav{align-items:flex-start;padding:13px 0;flex-direction:column;gap:12px}.links{width:100%;justify-content:space-between}.links a{font-size:11px}.links .book{padding:6px 9px}.brand strong{font-size:19px}h1{letter-spacing:-1.4px}.hero-art{min-height:300px}.sun{width:85px;height:85px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -34,7 +34,7 @@
   <div class="notice">WEBSITE CONCEPT FOR PURCHASE · Independent proposal by ASTRA Digital Studio · Not commissioned or approved by Snice Café</div>
   <header><nav class="wrap" aria-label="Main navigation">
     <a class="brand" href="#top"><span class="mark" aria-hidden="true">✦</span><span><strong>Snice Café</strong><small>Concept design only</small></span></a>
-    <div class="links"><a href="#story">Our vibe</a><a href="#menu">Menu concept</a><a href="#visit">Find us</a><a class="book" href="#visit">Contact info</a></div>
+    <div class="links"><a href="#story">Our vibe</a><a href="#gallery">Food & drinks</a><a href="#menu">Menu concept</a><a href="#visit">Find us</a><a class="book" href="#visit">Contact info</a></div>
   </nav></header>
   <main id="top">
     <section class="wrap hero">
@@ -55,6 +55,18 @@
         <article class="feature"><div class="symbol" aria-hidden="true">☕</div><h3>Coffee culture</h3><p>A place for the owner to showcase the actual coffee, drinks, snacks, and specialties once details are confirmed.</p></article>
         <article class="feature"><div class="symbol" aria-hidden="true">⌖</div><h3>Easy to find</h3><p>A clear location section helps visitors find the café. Contact information should be checked before launch.</p></article>
       </div>
+    </section>
+    <section class="wrap" id="gallery">
+      <div class="heading"><div class="eyebrow">Food & drinks</div><h2>A taste of the café mood.</h2><p>Photo inspiration for this website concept. These are illustrative stock photos, not verified photos of Snice Café's actual products.</p></div>
+      <div class="gallery">
+        <article class="photo-card"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85" alt="Freshly baked croissants on a tray" loading="lazy"><div><h3>Freshly baked bites</h3><p>Food photo inspiration</p></div></article>
+        <article class="photo-card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85" alt="Rustic fresh bread and bakery items" loading="lazy"><div><h3>Bakery favorites</h3><p>Food photo inspiration</p></div></article>
+        <article class="photo-card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Burger with fresh toppings" loading="lazy"><div><h3>Hearty café food</h3><p>Food photo inspiration</p></div></article>
+        <article class="photo-card"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85" alt="Coffee drinks on a café table" loading="lazy"><div><h3>Fresh coffee</h3><p>Drinks photo inspiration</p></div></article>
+        <article class="photo-card"><img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85" alt="Iced coffee served in a glass" loading="lazy"><div><h3>Iced coffee</h3><p>Drinks photo inspiration</p></div></article>
+        <article class="photo-card"><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=85" alt="Coffee with milk art in a ceramic cup" loading="lazy"><div><h3>Latte moments</h3><p>Drinks photo inspiration</p></div></article>
+      </div>
+      <p class="photo-note">Before this becomes the café's official website, replace these sample images with owner-approved photos of the real food and drinks.</p>
     </section>
     <section class="wrap" id="menu">
       <div class="heading"><div class="eyebrow">Menu preview</div><h2>A menu that puts the real offering first.</h2><p>No invented products or prices are presented as fact. These placeholders show how the final menu can be organized with the owner's approval.</p></div>
