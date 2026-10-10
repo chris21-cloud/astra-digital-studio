@@ -157,6 +157,26 @@
     .concept-filter.active{color:#08111d}
     @media(prefers-reduced-motion:no-preference){.card,.trust-item,.portfolio,.package{transition:border-color .2s,box-shadow .2s,transform .2s}.card:hover,.trust-item:hover{transform:translateY(-3px);box-shadow:0 14px 35px #0003}}
 
+  
+    /* Mobile layout repair: keep every portfolio card in one column */
+    @media(max-width:800px){
+      .portfolio,
+      .portfolio:nth-of-type(n){grid-template-columns:minmax(0,1fr)!important;min-width:0}
+      .portfolio:nth-of-type(n) .portfolio-art{order:0;min-width:0;min-height:210px;border-radius:16px}
+    }
+    @media(max-width:560px){
+      html,body{max-width:100%;overflow-x:hidden}
+      .wrap,.hero,.hero-copy,.showcase,.portfolio,.portfolio-copy,.portfolio-art,.cta,.brief-form{min-width:0;max-width:100%}
+      .showcase{transform:none;width:calc(100% - 8px);margin:0 auto}
+      .showcase:hover{transform:none}
+      .float-tag{position:static;display:inline-block;margin:12px 0 0;max-width:100%}
+      .portfolio{padding:16px;gap:18px}
+      .portfolio:nth-of-type(n) .portfolio-art{order:0;min-height:200px}
+      .hero-stats span{white-space:normal}
+      .navlinks{max-width:100%;min-width:0}
+      .cta{padding:22px}
+    }
+
   </style>
 </head>
 <body>
