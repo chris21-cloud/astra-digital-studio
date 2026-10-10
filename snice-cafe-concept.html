@@ -28,7 +28,27 @@
     @media(max-width:760px){.hero{grid-template-columns:1fr;gap:35px;padding:55px 0}.hero-art{min-height:340px;max-width:500px;width:100%;margin:auto}.features{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.photo-card img{height:190px}.menu,.visit{grid-template-columns:1fr}.links{gap:12px}.links a{font-size:12px}}
     @media(max-width:480px){.gallery{grid-template-columns:1fr}.photo-card img{height:230px}.wrap{width:calc(100% - 28px)}nav{align-items:flex-start;padding:13px 0;flex-direction:column;gap:12px}.links{width:100%;justify-content:space-between}.links a{font-size:11px}.links .book{padding:6px 9px}.brand strong{font-size:19px}h1{letter-spacing:-1.4px}.hero-art{min-height:300px}.sun{width:85px;height:85px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  </style>
+  
+/* ASTRA experience upgrade */
+:focus-visible{outline:3px solid #c99a5d;outline-offset:4px}
+html{scroll-padding-top:90px}
+::selection{background:#c99a5d;color:#fff}
+a,button{transition:transform .22s ease,box-shadow .22s ease,opacity .22s ease}
+a:hover{opacity:.9}
+.hero,.hero-copy,.hero-art,.hero-poster,.visit,.contact,.ask{isolation:isolate}
+.item,.menu-item,.feature,.photo-card,.menu-row{transition:transform .22s ease,box-shadow .22s ease}.item:hover,.menu-item:hover,.feature:hover,.photo-card:hover{transform:translateY(-4px)}
+.ast-search{display:flex;gap:10px;align-items:center;max-width:650px;margin:20px 0 24px;padding:8px;border:1px solid #6e543f55;border-radius:14px;background:#fffdf8;box-shadow:0 10px 30px #00000008}
+.ast-search input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:inherit;font:inherit;padding:9px 10px}
+.ast-search input::placeholder{opacity:.65}
+.ast-search span{font-size:11px;font-weight:800;opacity:.65;padding:0 9px;white-space:nowrap}
+.ast-search [hidden]{display:none!important}
+.ast-top{position:fixed;right:18px;bottom:18px;z-index:40;width:44px;height:44px;border:0;border-radius:50%;background:#e8bd76;color:#fff;box-shadow:0 8px 24px #0002;cursor:pointer;font-size:20px;opacity:0;pointer-events:none;transform:translateY(8px)}
+.ast-top.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
+.ast-reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.ast-reveal.in-view{opacity:1;transform:translateY(0)}
+@media(max-width:600px){.ast-search{gap:4px}.ast-search span{display:none}.ast-top{right:12px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){.ast-reveal{opacity:1;transform:none;transition:none}*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
 </head>
 <body>
   <div class="notice">WEBSITE CONCEPT FOR PURCHASE · Independent proposal by ASTRA Digital Studio · Not commissioned or approved by Snice Café</div>
@@ -87,5 +107,36 @@
     </section>
   </main>
   <footer><div class="wrap foot"><span>Unofficial concept by ASTRA Digital Studio</span><span>Independent concept for purchase · Not affiliated with or endorsed by Snice Café</span></div></footer>
-</body>
+
+<script>
+(() => {
+ const searchTargets = [{selector:'#menu .menu-row', title:'Find a menu item', placeholder:'Search the sample menu…'},{selector:'#gallery .photo-card', title:'Explore the café gallery', placeholder:'Search coffee, bakery, bites…'}];
+ searchTargets.forEach((config,index) => {
+   const cards = Array.from(document.querySelectorAll(config.selector));
+   if(!cards.length) return;
+   const section = cards[0].closest('section') || cards[0].parentElement;
+   const form = document.createElement('form');
+   form.className='ast-search';
+   form.setAttribute('role','search');
+   form.innerHTML='<input type="search" aria-label="'+config.title+'" placeholder="'+config.placeholder+'" autocomplete="off"><span aria-live="polite"></span>';
+   const input=form.querySelector('input'), status=form.querySelector('span');
+   const parent=cards[0].parentElement;
+   parent.parentNode.insertBefore(form,parent);
+   const update=()=>{let count=0; const q=input.value.trim().toLowerCase();cards.forEach(card=>{const match=!q||card.textContent.toLowerCase().includes(q);card.hidden=!match;if(match)count++;});status.textContent=q?count+' match'+(count===1?'':'es'):cards.length+' items';};
+   form.addEventListener('submit',event=>event.preventDefault());
+   input.addEventListener('input',update);
+   update();
+ });
+ const revealSelector='section, .feature, .category, .product, .menu-item, .photo-card, .item, .visit-card';
+ document.querySelectorAll(revealSelector).forEach((el,i)=>{if(el.closest('header,nav,footer'))return;el.classList.add('ast-reveal');el.style.transitionDelay=Math.min(i%5,4)*55+'ms';});
+ if('IntersectionObserver' in window){
+   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');observer.unobserve(entry.target);}}),{threshold:.08});
+   document.querySelectorAll('.ast-reveal').forEach(el=>observer.observe(el));
+ } else {document.querySelectorAll('.ast-reveal').forEach(el=>el.classList.add('in-view'));}
+ const top=document.createElement('button');top.className='ast-top';top.type='button';top.setAttribute('aria-label','Back to top');top.title='Back to top';top.textContent='↑';document.body.appendChild(top);
+ top.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+ const onScroll=()=>top.classList.toggle('visible',window.scrollY>500);
+ window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script></body>
 </html>
