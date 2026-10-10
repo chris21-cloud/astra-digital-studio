@@ -254,8 +254,9 @@
         <button type="button" class="concept-filter active" data-filter="all" aria-pressed="true">All concepts <span>05</span></button>
         <button type="button" class="concept-filter" data-filter="cafe" aria-pressed="false">Café concepts <span>04</span></button>
         <button type="button" class="concept-filter" data-filter="electronics" aria-pressed="false">Electronics <span>01</span></button>
+        <button type="button" class="concept-filter" data-filter="clothing" aria-pressed="false">Clothing <span>01</span></button>
       </div>
-      <p class="search-status" id="search-status" aria-live="polite">Showing all 5 website concepts.</p>
+      <p class="search-status" id="search-status" aria-live="polite">Showing all 6 website concepts.</p>
       <article class="portfolio">
         <div class="portfolio-art" aria-label="Illustrated concept artwork for The Cozy Cup café">
           <div class="art-label">ASTRA CONCEPT PROJECT · 01</div>
@@ -325,6 +326,20 @@
           <p class="muted">A sample design for the real menu, café story, opening hours, location, and directions—all easy to browse on a phone.</p>
           <a class="text-link" href="buna-cafe-concept.html">View Buna Cafe concept <span aria-hidden="true">→</span></a>
           <p class="tiny-note">Not commissioned or endorsed by the business. Details require owner confirmation.</p>
+        </div>
+      </article>
+      <article class="portfolio" data-category="clothing">
+        <div class="portfolio-art" style="background:radial-gradient(circle at 75% 20%,#d7b56d55,transparent 32%),linear-gradient(145deg,#343027,#11110f)" aria-label="Crown 7 menswear website concept artwork">
+          <div class="art-label" style="color:#d7b56d">ASTRA WEBSITE CONCEPT · 06</div>
+          <div class="coffee-symbol" aria-hidden="true">♔</div>
+          <div class="art-title">CROWN 7<br>Style, defined.</div>
+        </div>
+        <div class="portfolio-copy">
+          <span class="pill">INDEPENDENT CONCEPT</span>
+          <h3>A premium menswear and suit shop website</h3>
+          <p class="muted">A sleek black, cream, and gold clothing storefront concept featuring a suit-inspired hero image, sample collection cards, and product enquiry links.</p>
+          <a class="text-link" href="crown7-clothing-concept.html">View Crown 7 clothing website <span aria-hidden="true">→</span></a>
+          <p class="tiny-note">An independent proposal by ASTRA, not the shop’s official website. Product details and contact information need owner confirmation.</p>
         </div>
       </article>
     </section>
@@ -434,7 +449,8 @@
         const text = card.textContent.toLowerCase();
         const categoryMatch = activeConceptFilter === 'all'
           || (activeConceptFilter === 'electronics' && text.includes('electronics'))
-          || (activeConceptFilter === 'cafe' && !text.includes('electronics'));
+          || (activeConceptFilter === 'clothing' && text.includes('crown 7'))
+          || (activeConceptFilter === 'cafe' && !text.includes('electronics') && !text.includes('crown 7'));
         const match = categoryMatch && (!query || text.includes(query));
         card.hidden = !match;
         if (match) shown++;
