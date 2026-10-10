@@ -19,7 +19,7 @@
     .topbar{position:sticky;top:0;z-index:10;background:#080d1be8;border-bottom:1px solid #ffffff12;backdrop-filter:blur(16px)}
     .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:950;letter-spacing:2px;font-size:19px}
-    .brandmark{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;color:#07111e;background:linear-gradient(135deg,var(--cyan),var(--violet));font-size:17px;letter-spacing:0}
+    .brandmark{width:40px;height:40px;display:grid;place-items:center;flex:0 0 40px;border-radius:12px;background:linear-gradient(145deg,#76e5ff18,#b7a0ff18);border:1px solid #76e5ff35;box-shadow:inset 0 0 18px #76e5ff08;letter-spacing:0}.brandmark svg{display:block;width:31px;height:31px;overflow:visible}.mountain-logo{fill:none;stroke:url(#astra-mountain-gradient);stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round}.mountain-star{fill:var(--cyan);stroke:none;filter:drop-shadow(0 0 4px #76e5ff99)}
     .brand span:last-child{color:var(--cyan)}
     .navlinks{display:flex;align-items:center;gap:25px}.navlinks a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:650}.navlinks a:hover{color:var(--text)}
     .navlinks .navcta{color:#07111e;background:linear-gradient(100deg,var(--cyan),var(--violet));padding:10px 15px;border-radius:11px}
@@ -53,14 +53,14 @@
     .cta{border:1px solid #53618a;border-radius:24px;padding:clamp(25px,5vw,48px);background:radial-gradient(ellipse at 100% 0%,#6b55a633,transparent 45%),linear-gradient(120deg,#13233a,#17152f);display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-1px;margin:9px 0 10px}.cta p{margin:0;color:var(--muted);max-width:560px}
     footer{padding:25px 0;border-top:1px solid #ffffff12;color:#8e9dbc;font-size:12px}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.footer-brand{font-weight:900;letter-spacing:1.4px;color:#dfe7f8}
     @media(max-width:800px){.hero{grid-template-columns:1fr;gap:42px;padding:62px 0 48px;min-height:0}.hero-copy{max-width:700px}.showcase{max-width:560px;width:100%;margin:auto}.service-grid{grid-template-columns:1fr 1fr}.portfolio{grid-template-columns:1fr}.portfolio-art{min-height:220px}.cta{align-items:flex-start;flex-direction:column}}
-    @media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 30px))}.nav{min-height:68px;flex-wrap:wrap;padding:12px 0}.navlinks{gap:13px}.navlinks a{font-size:12px}.navlinks .navcta{padding:7px 10px}.brand{font-size:17px}.brandmark{width:30px;height:30px}h1{letter-spacing:-2px;font-size:clamp(42px,12vw,60px)}.lead{font-size:16px}.service-grid,.process-grid{grid-template-columns:1fr}.card{padding:21px}.preview{padding:22px 17px}.preview-tile{height:62px}.float-tag{right:-5px;bottom:16px}.hero{padding-top:48px}section{padding:52px 0}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 30px))}.nav{min-height:68px;flex-wrap:wrap;padding:12px 0}.navlinks{gap:13px}.navlinks a{font-size:12px}.navlinks .navcta{padding:7px 10px}.brand{font-size:17px}.brandmark{width:36px;height:36px;flex-basis:36px}.brandmark svg{width:28px;height:28px}h1{letter-spacing:-2px;font-size:clamp(42px,12vw,60px)}.lead{font-size:16px}.service-grid,.process-grid{grid-template-columns:1fr}.card{padding:21px}.preview{padding:22px 17px}.preview-tile{height:62px}.float-tag{right:-5px;bottom:16px}.hero{padding-top:48px}section{padding:52px 0}.footer-inner{align-items:flex-start;flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
   </style>
 </head>
 <body>
   <header class="topbar">
     <nav class="wrap nav" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="ASTRA Digital Studio home"><span class="brandmark">✦</span> ASTRA<span>.</span></a>
+      <a class="brand" href="#top" aria-label="ASTRA Digital Studio home"><span class="brandmark"><svg viewBox="0 0 40 40" role="img" aria-label="Mountain peak and star"><defs><linearGradient id="astra-mountain-gradient" x1="4" y1="34" x2="35" y2="5" gradientUnits="userSpaceOnUse"><stop stop-color="#76e5ff"/><stop offset="1" stop-color="#b7a0ff"/></linearGradient></defs><path class="mountain-logo" d="M4 31 15.2 14.5 21 22.3 25.2 16.8 36 31H4Z"/><path class="mountain-logo" d="M10 31 17.4 20.1 21 25"/><path class="mountain-logo" d="M23.7 25.5 27.1 21.2 33 31"/><path class="mountain-star" d="m29.3 4.8 1.5 3.5 3.5 1.4-3.5 1.5-1.5 3.5-1.4-3.5-3.5-1.5 3.5-1.4z"/></svg></span> ASTRA<span>.</span></a>
       <div class="navlinks">
         <a href="#services">Services</a>
         <a href="#work">Sample work</a>
@@ -151,7 +151,7 @@
       </div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><div class="footer-brand">✦ ASTRA DIGITAL STUDIO</div><div>Built with care in Ethiopia · © <span id="year">2026</span> ASTRA</div></div></footer>
+  <footer><div class="wrap footer-inner"><div class="footer-brand"><svg viewBox="0 0 40 40" aria-hidden="true" style="width:22px;height:22px;vertical-align:middle;margin-right:7px;fill:none;stroke:#76e5ff;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round"><path d="M4 31 15.2 14.5 21 22.3 25.2 16.8 36 31H4Z"/><path d="M10 31 17.4 20.1 21 25"/><path d="M29.3 4.8 30.8 8.3 34.3 9.7 30.8 11.2 29.3 14.7 27.9 11.2 24.4 9.7 27.9 8.3Z"/></svg>ASTRA DIGITAL STUDIO</div><div>Built with care in Ethiopia · © <span id="year">2026</span> ASTRA</div></div></footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
